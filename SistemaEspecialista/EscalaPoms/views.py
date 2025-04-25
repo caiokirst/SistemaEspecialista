@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+
+from .utils import *
 from .models import *
 
 #Todas as funções verificam se o método é post get
@@ -15,7 +17,21 @@ def login(request):
 def cadastro(request):
     
     if request.method == 'POST':
-        return redirect('dashboard')
+        if validar_cpf(request.POST['cpf']):
+            """"
+            cpf = request.POST['cpf']
+            nome = request.POST['nome']
+            email = request.POST['email']
+            senha = request.POST['senha']
+            tipo_usuario = request.POST['tipo_usuario']
+            """
+            return redirect('login')    
+        
+        message = {
+            'message': 'CPF inválido. Por favor, insira um CPF válido.'
+        }
+        return render(request, 'EscalaPoms:cadastro', message)
+    
 
     return render(request, 'EscalaPoms/cadastro.html')
 
