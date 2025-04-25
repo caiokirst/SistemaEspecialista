@@ -22,7 +22,7 @@ body {
   width: 100%;
   background-color: #fff;
   padding: 30px;
-  border-radius: 5px;
+  border-radius: 32px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -84,7 +84,7 @@ form .button {
 form .button input {
   height: 100%;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 32px;
   border: none;
   color: #fff;
   font-size: 18px;

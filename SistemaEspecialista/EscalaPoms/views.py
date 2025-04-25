@@ -17,7 +17,6 @@ def login(request):
 def cadastro(request):
     
     if request.method == 'POST':
-        if validar_cpf(request.POST['cpf']):
             """"
             cpf = request.POST['cpf']
             nome = request.POST['nome']
@@ -25,13 +24,7 @@ def cadastro(request):
             senha = request.POST['senha']
             tipo_usuario = request.POST['tipo_usuario']
             """
-            return redirect('login')    
-        
-        message = {
-            'message': 'CPF inválido. Por favor, insira um CPF válido.'
-        }
-        return render(request, 'EscalaPoms:cadastro', message)
-    
+            return redirect('login')   
 
     return render(request, 'EscalaPoms/cadastro.html')
 
