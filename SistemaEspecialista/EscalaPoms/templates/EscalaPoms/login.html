@@ -1,10 +1,46 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="pt">
+
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Login de usuário </title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
-  <h1>Você está na tela de Login</h1>
+  <div class="container">
+    <!-- Title section -->
+    <div class="title">Login</div>
+    <div class="content">
+      
+      <!-- Form de login -->
+      <form action="#" method="post">
+        <div class="user-details">
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Digite seu email" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Senha</span>
+            <input type="password" placeholder="Digite sua senha" required>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="button">
+          <input type="submit" value="Entrar">
+        </div>
+        
+        <!-- Link para cadastro -->
+        <div class="signup-link">
+          <p>Não tem uma conta? <a href="{% url 'cadastro' %}">Cadastre-se</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
